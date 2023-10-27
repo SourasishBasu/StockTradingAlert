@@ -57,6 +57,7 @@ else:
 # Extracting last 3 news articles related to the company via the NEWS API
 url = f'https://newsapi.org/v2/everything?q={COMPANY_NAME}&apiKey={NEWS_API_KEY}'
 r = requests.get(url)
+data = r.json()
 info = data["articles"][:3]
 
 # Creating a list containing title and description of the last 3 news articles
